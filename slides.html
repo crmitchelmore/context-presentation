@@ -174,7 +174,7 @@ section.divider h2 {
 " lang="en-GB" class="lead" style="--class:lead;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap')
 ;">
 <h1 id="how-llms-work">How LLMs Work</h1>
-<h2 id="context-is-everything">Context Is Everything</h2>
+<h2 id="context-is-king">Context Is King</h2>
 <p><strong>13 February 2026</strong></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-class="lead" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
@@ -350,7 +350,7 @@ Every "feature" — system prompts, tools, <abbr title="Model Context Protocol �
 is just a mechanism for <strong style="color: var(--accent-orange);">putting text into that window</strong>.
 </h2>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
 
 :root {
   --bg-primary: #0d1117;
@@ -514,16 +514,344 @@ section.divider h2 {
   font-size: 1.2em;
 }
 " lang="en-GB" data-marpit-pagination="3" style="--paginate:true;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap')
-;" data-marpit-pagination-total="37">
-<h1 id="what-well-cover">What We'll Cover</h1>
+;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="37" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;images/agenda-roadmap.png&quot;);"></figure></div></section></foreignObject><foreignObject width="60%" height="720"><section id="3" data-paginate="true" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --border-subtle: #21262d;
+  --border-default: #30363d;
+  --text-primary: #e6edf3;
+  --text-secondary: #c9d1d9;
+  --text-muted: #9ca3af;
+  --text-subtle: #8b949e;
+  --accent-blue: #58a6ff;
+  --accent-blue-light: #79c0ff;
+  --accent-purple: #d2a8ff;
+  --accent-orange: #f0883e;
+  --code-bg: #161b22;
+}
+
+section {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 28px;
+  overflow: hidden;
+}
+section.lead {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.lead h1 {
+  font-size: 2.8em;
+  color: var(--accent-blue);
+  margin-bottom: 0.2em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+section.lead h2 {
+  font-size: 1.4em;
+  color: var(--text-subtle);
+  font-weight: 400;
+}
+h1 { 
+  color: var(--accent-blue); 
+  font-size: 1.6em; 
+  margin-bottom: 0.3em; 
+  font-weight: 600; 
+  letter-spacing: -0.02em; 
+}
+h2 { 
+  color: var(--accent-blue-light); 
+  font-size: 1.2em; 
+  font-weight: 600; 
+  letter-spacing: -0.02em; 
+}
+h3 { 
+  color: var(--accent-purple); 
+  margin-top: 0.3em; 
+  margin-bottom: 0.2em; 
+  font-weight: 600; 
+  letter-spacing: -0.02em; 
+}
+a { color: var(--accent-blue); }
+abbr[title] {
+  text-decoration: underline dotted;
+  text-decoration-color: #58a6ff40;
+  text-underline-offset: 3px;
+  cursor: help;
+  font-style: normal;
+}
+abbr[title]:hover {
+  text-decoration-color: var(--accent-blue);
+}
+code {
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  font-weight: 400;
+  background: var(--code-bg);
+  color: var(--accent-blue-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+pre {
+  background: var(--code-bg) !important;
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  padding: 16px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+pre code { 
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  font-weight: 400;
+  background: transparent; 
+  padding: 0; 
+}
+table {
+  font-size: 0.75em;
+  border-collapse: collapse;
+  width: 100%;
+  color: var(--text-primary) !important;
+  background: var(--bg-primary) !important;
+}
+th { 
+  background: var(--bg-secondary) !important; 
+  color: var(--accent-blue) !important; 
+  border-bottom: 2px solid var(--border-default); 
+}
+td { 
+  border-bottom: 1px solid var(--border-subtle); 
+  background: var(--bg-primary) !important; 
+  color: var(--text-primary) !important; 
+}
+tr:nth-child(even) td { background: var(--bg-secondary) !important; }
+tr:nth-child(odd) td { background: var(--bg-primary) !important; }
+blockquote {
+  border-left: 5px solid var(--accent-blue);
+  background: var(--bg-secondary);
+  padding: 8px 16px;
+  margin: 10px 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+blockquote strong { color: var(--accent-blue); font-style: normal; }
+.columns { display: flex; gap: 1.5em; }
+.columns &gt; * { flex: 1; }
+.highlight { color: var(--accent-orange); font-weight: bold; }
+.stat { 
+  font-size: 2.2em; 
+  color: var(--accent-blue); 
+  font-weight: bold; 
+  text-shadow: 0 2px 4px rgba(88, 166, 255, 0.3);
+}
+.stat-label { font-size: 0.8em; color: var(--text-subtle); }
+.small { font-size: 0.6em; color: var(--text-muted); margin-top: 0.5em; }
+ul, ol { margin: 0.3em 0; }
+li { margin: 0.15em 0; }
+p { margin: 0.4em 0; }
+pre { margin: 0.5em 0 !important; }
+img { border-radius: 8px; }
+.emoji { font-size: 1.4em; }
+section.divider {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+section.divider h1 {
+  font-size: 2.4em;
+  color: var(--accent-blue);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+section.divider h2 {
+  color: var(--text-subtle);
+  font-weight: 400;
+  font-size: 1.2em;
+}
+" lang="en-GB" data-marpit-pagination="3" style="--paginate:true;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap')
+;--marpit-advanced-background-split:40%;" data-marpit-pagination-total="37" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<h1 id="todays-agenda">Today's Agenda</h1>
+
 <ol>
 <li><strong>First Principles</strong> — tokens, attention, the context window</li>
-<li><strong>Context Is Everything</strong> — what fills the window and why it matters</li>
+<li><strong>Context Is King</strong> — what fills the window and why it matters</li>
 <li><strong>Agents</strong> — systems that manage context automatically</li>
 <li><strong>Putting It Together</strong> — where this lands and what to learn next</li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --border-subtle: #21262d;
+  --border-default: #30363d;
+  --text-primary: #e6edf3;
+  --text-secondary: #c9d1d9;
+  --text-muted: #9ca3af;
+  --text-subtle: #8b949e;
+  --accent-blue: #58a6ff;
+  --accent-blue-light: #79c0ff;
+  --accent-purple: #d2a8ff;
+  --accent-orange: #f0883e;
+  --code-bg: #161b22;
+}
+
+section {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 28px;
+  overflow: hidden;
+}
+section.lead {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.lead h1 {
+  font-size: 2.8em;
+  color: var(--accent-blue);
+  margin-bottom: 0.2em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+section.lead h2 {
+  font-size: 1.4em;
+  color: var(--text-subtle);
+  font-weight: 400;
+}
+h1 { 
+  color: var(--accent-blue); 
+  font-size: 1.6em; 
+  margin-bottom: 0.3em; 
+  font-weight: 600; 
+  letter-spacing: -0.02em; 
+}
+h2 { 
+  color: var(--accent-blue-light); 
+  font-size: 1.2em; 
+  font-weight: 600; 
+  letter-spacing: -0.02em; 
+}
+h3 { 
+  color: var(--accent-purple); 
+  margin-top: 0.3em; 
+  margin-bottom: 0.2em; 
+  font-weight: 600; 
+  letter-spacing: -0.02em; 
+}
+a { color: var(--accent-blue); }
+abbr[title] {
+  text-decoration: underline dotted;
+  text-decoration-color: #58a6ff40;
+  text-underline-offset: 3px;
+  cursor: help;
+  font-style: normal;
+}
+abbr[title]:hover {
+  text-decoration-color: var(--accent-blue);
+}
+code {
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  font-weight: 400;
+  background: var(--code-bg);
+  color: var(--accent-blue-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+pre {
+  background: var(--code-bg) !important;
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  padding: 16px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+pre code { 
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  font-weight: 400;
+  background: transparent; 
+  padding: 0; 
+}
+table {
+  font-size: 0.75em;
+  border-collapse: collapse;
+  width: 100%;
+  color: var(--text-primary) !important;
+  background: var(--bg-primary) !important;
+}
+th { 
+  background: var(--bg-secondary) !important; 
+  color: var(--accent-blue) !important; 
+  border-bottom: 2px solid var(--border-default); 
+}
+td { 
+  border-bottom: 1px solid var(--border-subtle); 
+  background: var(--bg-primary) !important; 
+  color: var(--text-primary) !important; 
+}
+tr:nth-child(even) td { background: var(--bg-secondary) !important; }
+tr:nth-child(odd) td { background: var(--bg-primary) !important; }
+blockquote {
+  border-left: 5px solid var(--accent-blue);
+  background: var(--bg-secondary);
+  padding: 8px 16px;
+  margin: 10px 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+blockquote strong { color: var(--accent-blue); font-style: normal; }
+.columns { display: flex; gap: 1.5em; }
+.columns &gt; * { flex: 1; }
+.highlight { color: var(--accent-orange); font-weight: bold; }
+.stat { 
+  font-size: 2.2em; 
+  color: var(--accent-blue); 
+  font-weight: bold; 
+  text-shadow: 0 2px 4px rgba(88, 166, 255, 0.3);
+}
+.stat-label { font-size: 0.8em; color: var(--text-subtle); }
+.small { font-size: 0.6em; color: var(--text-muted); margin-top: 0.5em; }
+ul, ol { margin: 0.3em 0; }
+li { margin: 0.15em 0; }
+p { margin: 0.4em 0; }
+pre { margin: 0.5em 0 !important; }
+img { border-radius: 8px; }
+.emoji { font-size: 1.4em; }
+section.divider {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+section.divider h1 {
+  font-size: 2.4em;
+  color: var(--accent-blue);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+section.divider h2 {
+  color: var(--text-subtle);
+  font-weight: 400;
+  font-size: 1.2em;
+}
+" lang="en-GB" data-marpit-pagination="3" style="" data-marpit-pagination-total="37" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
 
 :root {
   --bg-primary: #0d1117;
@@ -688,7 +1016,7 @@ section.divider h2 {
 }
 " lang="en-GB" data-marpit-pagination="4" style="--paginate:true;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap')
 ;" data-marpit-pagination-total="37">
-<h1 id="its-simpler-than-you-think">It's Simpler Than You Think</h1>
+<h1 id="its-not-as-complicated-as-it-looks">It's Not as Complicated as It Looks</h1>
 <div class="columns">
 <div>
 <h3 id="the-paper">The paper</h3>
@@ -871,7 +1199,8 @@ section.divider h2 {
 }
 " lang="en-GB" data-marpit-pagination="5" style="--paginate:true;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap')
 ;" data-marpit-pagination-total="37">
-<h1 id="the-jargon-decoder">The Jargon Decoder</h1>
+<h1 id="cracking-the-cryptic">Cracking the Cryptic</h1>
+<div style="display: flex; justify-content: center;">
 <table>
 <thead>
 <tr>
@@ -922,8 +1251,9 @@ section.divider h2 {
 </tr>
 </tbody>
 </table>
+</div>
 <blockquote>
-<p><strong>nanoGPT:</strong> a full working LLM in <strong>~600 lines</strong> of Python.</p>
+<p><strong><a href="https://github.com/karpathy/nanoGPT">nanoGPT</a>:</strong> a full working LLM in <strong>~600 lines</strong> of Python.</p>
 </blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-class="divider" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
@@ -4678,7 +5008,7 @@ section.divider h2 {
 " lang="en-GB" class="divider" data-marpit-pagination="14" style="--paginate:true;--class:divider;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap')
 ;" data-marpit-pagination-total="37" data-marpit-advanced-background="content">
 <h1 id="part-2">Part 2</h1>
-<h2 id="context-is-everything-1">Context Is Everything</h2>
+<h2 id="context-is-everything">Context Is Everything</h2>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-class="divider" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
 
@@ -5077,11 +5407,6 @@ section.divider h2 {
 <td>Custom agents (.agent.md)</td>
 <td><img class="emoji" draggable="false" alt="👤" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f464.svg" data-marp-twemoji=""/> User</td>
 <td>Invoked</td>
-</tr>
-<tr>
-<td>Hooks</td>
-<td><img class="emoji" draggable="false" alt="👤" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f464.svg" data-marp-twemoji=""/> User</td>
-<td>Event-driven</td>
 </tr>
 <tr>
 <td>Conversation history</td>
@@ -6308,7 +6633,7 @@ section.divider h2 {
 </tr>
 <tr>
 <td><strong>Who decides</strong></td>
-<td>Retrieval pipeline</td>
+<td>Your search setup</td>
 <td>The model itself</td>
 </tr>
 </tbody>
@@ -8758,10 +9083,9 @@ section.divider h2 {
 ;" data-marpit-pagination-total="37">
 <h1 id="calibrating-trust">Calibrating Trust</h1>
 <blockquote>
-<p><em>&quot;We still need to think in probabilities and choose the right level of human oversight for the job.&quot;</em><br />
+<p><em>&quot;Think in probabilities and choose the right level of human oversight for the job.&quot;</em><br />
 — <strong>Martin Fowler</strong></p>
 </blockquote>
-<p>Context engineering increases <strong>probability</strong> of good output — but models are probabilistic, not deterministic.</p>
 <p><strong>In practice (Feb 2026), they're remarkably reliable:</strong></p>
 <ul>
 <li>Follow instructions consistently when context is well-engineered</li>
@@ -8770,7 +9094,7 @@ section.divider h2 {
 </ul>
 <p><strong>Match oversight to stakes:</strong></p>
 <ul>
-<li><img class="emoji" draggable="false" alt="🟢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e2.svg" data-marp-twemoji=""/> Most tasks — let it run, review Ctrl+Y the diff</li>
+<li><img class="emoji" draggable="false" alt="🟢" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e2.svg" data-marp-twemoji=""/> Most tasks — let it run, review the diff</li>
 <li><img class="emoji" draggable="false" alt="🟡" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f7e1.svg" data-marp-twemoji=""/> Sensitive data — log and spot-check</li>
 <li><img class="emoji" draggable="false" alt="🔴" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f534.svg" data-marp-twemoji=""/> Irreversible actions — require human approval</li>
 </ul>
@@ -10180,181 +10504,10 @@ section.divider h2 {
 <p><strong>Part 1</strong> — LLMs <span style="color: var(--accent-blue);">predict the next token</span>. That's the entire mechanism.</p>
 <p><strong>Part 2</strong> — The <span style="color: var(--accent-blue);">context window</span> is all they see. Every &quot;feature&quot; is just putting text into it.</p>
 <p><strong>Part 3</strong> — Agents are loops that <span style="color: var(--accent-orange);">manage context</span>: compaction, notes, sub-agents.</p>
-<p><strong>Part 4</strong> — SWE-bench: 1.7% → 79% in two years. <span style="color: var(--accent-orange);">Context engineering</span> is why.</p>
-<p><img class="emoji" draggable="false" alt="🔑" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f511.svg" data-marp-twemoji=""/> This applies whether you're <strong>building or using</strong> AI.</p>
+<p><strong>Part 4</strong> — SWE-bench: 1.7% → 79% in two years. <span style="color: var(--accent-orange);">Context engineering</span> is the core skill now.</p>
 </div>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-class="lead" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
-
-:root {
-  --bg-primary: #0d1117;
-  --bg-secondary: #161b22;
-  --border-subtle: #21262d;
-  --border-default: #30363d;
-  --text-primary: #e6edf3;
-  --text-secondary: #c9d1d9;
-  --text-muted: #9ca3af;
-  --text-subtle: #8b949e;
-  --accent-blue: #58a6ff;
-  --accent-blue-light: #79c0ff;
-  --accent-purple: #d2a8ff;
-  --accent-orange: #f0883e;
-  --code-bg: #161b22;
-}
-
-section {
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  font-size: 28px;
-  overflow: hidden;
-}
-section.lead {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-section.lead h1 {
-  font-size: 2.8em;
-  color: var(--accent-blue);
-  margin-bottom: 0.2em;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-section.lead h2 {
-  font-size: 1.4em;
-  color: var(--text-subtle);
-  font-weight: 400;
-}
-h1 { 
-  color: var(--accent-blue); 
-  font-size: 1.6em; 
-  margin-bottom: 0.3em; 
-  font-weight: 600; 
-  letter-spacing: -0.02em; 
-}
-h2 { 
-  color: var(--accent-blue-light); 
-  font-size: 1.2em; 
-  font-weight: 600; 
-  letter-spacing: -0.02em; 
-}
-h3 { 
-  color: var(--accent-purple); 
-  margin-top: 0.3em; 
-  margin-bottom: 0.2em; 
-  font-weight: 600; 
-  letter-spacing: -0.02em; 
-}
-a { color: var(--accent-blue); }
-abbr[title] {
-  text-decoration: underline dotted;
-  text-decoration-color: #58a6ff40;
-  text-underline-offset: 3px;
-  cursor: help;
-  font-style: normal;
-}
-abbr[title]:hover {
-  text-decoration-color: var(--accent-blue);
-}
-code {
-  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
-  font-weight: 400;
-  background: var(--code-bg);
-  color: var(--accent-blue-light);
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-pre {
-  background: var(--code-bg) !important;
-  border: 1px solid var(--border-default);
-  border-radius: 10px;
-  padding: 16px !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-pre code { 
-  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
-  font-weight: 400;
-  background: transparent; 
-  padding: 0; 
-}
-table {
-  font-size: 0.75em;
-  border-collapse: collapse;
-  width: 100%;
-  color: var(--text-primary) !important;
-  background: var(--bg-primary) !important;
-}
-th { 
-  background: var(--bg-secondary) !important; 
-  color: var(--accent-blue) !important; 
-  border-bottom: 2px solid var(--border-default); 
-}
-td { 
-  border-bottom: 1px solid var(--border-subtle); 
-  background: var(--bg-primary) !important; 
-  color: var(--text-primary) !important; 
-}
-tr:nth-child(even) td { background: var(--bg-secondary) !important; }
-tr:nth-child(odd) td { background: var(--bg-primary) !important; }
-blockquote {
-  border-left: 5px solid var(--accent-blue);
-  background: var(--bg-secondary);
-  padding: 8px 16px;
-  margin: 10px 0;
-  border-radius: 0 8px 8px 0;
-  font-style: italic;
-  color: var(--text-secondary);
-  font-size: 0.9em;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-}
-blockquote strong { color: var(--accent-blue); font-style: normal; }
-.columns { display: flex; gap: 1.5em; }
-.columns &gt; * { flex: 1; }
-.highlight { color: var(--accent-orange); font-weight: bold; }
-.stat { 
-  font-size: 2.2em; 
-  color: var(--accent-blue); 
-  font-weight: bold; 
-  text-shadow: 0 2px 4px rgba(88, 166, 255, 0.3);
-}
-.stat-label { font-size: 0.8em; color: var(--text-subtle); }
-.small { font-size: 0.6em; color: var(--text-muted); margin-top: 0.5em; }
-ul, ol { margin: 0.3em 0; }
-li { margin: 0.15em 0; }
-p { margin: 0.4em 0; }
-pre { margin: 0.5em 0 !important; }
-img { border-radius: 8px; }
-.emoji { font-size: 1.4em; }
-section.divider {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-}
-section.divider h1 {
-  font-size: 2.4em;
-  color: var(--accent-blue);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-section.divider h2 {
-  color: var(--text-subtle);
-  font-weight: 400;
-  font-size: 1.2em;
-}
-" lang="en-GB" class="lead" style="--class:lead;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap')
-;">
-<h1 id="thank-you">Thank You</h1>
-<p><strong>Context is everything.</strong></p>
-<p>All slides, outline, and references:<br />
-<code>github.com/crmitchelmore/context-presentation</code></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
 
 :root {
   --bg-primary: #0d1117;
@@ -10528,6 +10681,176 @@ section.divider h2 {
 <li>If oversubscribed, we'll add a second session</li>
 </ul>
 <p><strong>Drop me a message on Teams</strong> and I'll schedule you in.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-class="lead" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --border-subtle: #21262d;
+  --border-default: #30363d;
+  --text-primary: #e6edf3;
+  --text-secondary: #c9d1d9;
+  --text-muted: #9ca3af;
+  --text-subtle: #8b949e;
+  --accent-blue: #58a6ff;
+  --accent-blue-light: #79c0ff;
+  --accent-purple: #d2a8ff;
+  --accent-orange: #f0883e;
+  --code-bg: #161b22;
+}
+
+section {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 28px;
+  overflow: hidden;
+}
+section.lead {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+section.lead h1 {
+  font-size: 2.8em;
+  color: var(--accent-blue);
+  margin-bottom: 0.2em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+section.lead h2 {
+  font-size: 1.4em;
+  color: var(--text-subtle);
+  font-weight: 400;
+}
+h1 { 
+  color: var(--accent-blue); 
+  font-size: 1.6em; 
+  margin-bottom: 0.3em; 
+  font-weight: 600; 
+  letter-spacing: -0.02em; 
+}
+h2 { 
+  color: var(--accent-blue-light); 
+  font-size: 1.2em; 
+  font-weight: 600; 
+  letter-spacing: -0.02em; 
+}
+h3 { 
+  color: var(--accent-purple); 
+  margin-top: 0.3em; 
+  margin-bottom: 0.2em; 
+  font-weight: 600; 
+  letter-spacing: -0.02em; 
+}
+a { color: var(--accent-blue); }
+abbr[title] {
+  text-decoration: underline dotted;
+  text-decoration-color: #58a6ff40;
+  text-underline-offset: 3px;
+  cursor: help;
+  font-style: normal;
+}
+abbr[title]:hover {
+  text-decoration-color: var(--accent-blue);
+}
+code {
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  font-weight: 400;
+  background: var(--code-bg);
+  color: var(--accent-blue-light);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+pre {
+  background: var(--code-bg) !important;
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  padding: 16px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+pre code { 
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  font-weight: 400;
+  background: transparent; 
+  padding: 0; 
+}
+table {
+  font-size: 0.75em;
+  border-collapse: collapse;
+  width: 100%;
+  color: var(--text-primary) !important;
+  background: var(--bg-primary) !important;
+}
+th { 
+  background: var(--bg-secondary) !important; 
+  color: var(--accent-blue) !important; 
+  border-bottom: 2px solid var(--border-default); 
+}
+td { 
+  border-bottom: 1px solid var(--border-subtle); 
+  background: var(--bg-primary) !important; 
+  color: var(--text-primary) !important; 
+}
+tr:nth-child(even) td { background: var(--bg-secondary) !important; }
+tr:nth-child(odd) td { background: var(--bg-primary) !important; }
+blockquote {
+  border-left: 5px solid var(--accent-blue);
+  background: var(--bg-secondary);
+  padding: 8px 16px;
+  margin: 10px 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+blockquote strong { color: var(--accent-blue); font-style: normal; }
+.columns { display: flex; gap: 1.5em; }
+.columns &gt; * { flex: 1; }
+.highlight { color: var(--accent-orange); font-weight: bold; }
+.stat { 
+  font-size: 2.2em; 
+  color: var(--accent-blue); 
+  font-weight: bold; 
+  text-shadow: 0 2px 4px rgba(88, 166, 255, 0.3);
+}
+.stat-label { font-size: 0.8em; color: var(--text-subtle); }
+.small { font-size: 0.6em; color: var(--text-muted); margin-top: 0.5em; }
+ul, ol { margin: 0.3em 0; }
+li { margin: 0.15em 0; }
+p { margin: 0.4em 0; }
+pre { margin: 0.5em 0 !important; }
+img { border-radius: 8px; }
+.emoji { font-size: 1.4em; }
+section.divider {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+section.divider h1 {
+  font-size: 2.4em;
+  color: var(--accent-blue);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+section.divider h2 {
+  color: var(--text-subtle);
+  font-weight: 400;
+  font-size: 1.2em;
+}
+" lang="en-GB" class="lead" style="--class:lead;--theme:default;--style:@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap')
+;">
+<h1 id="thank-you">Thank You</h1>
+<p><strong>Context is everything.</strong></p>
+<p>All slides, outline, and references:<br />
+<code>github.com/crmitchelmore/context-presentation</code></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="default" data-style="@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
 

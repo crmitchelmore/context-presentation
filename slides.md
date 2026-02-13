@@ -173,7 +173,7 @@ style: |
 <!-- _paginate: false -->
 
 # How LLMs Work
-## Context Is Everything
+## Context Is King
 
 **13 February 2026**
 
@@ -194,16 +194,18 @@ is just a mechanism for <strong style="color: var(--accent-orange);">putting tex
 
 ---
 
-# What We'll Cover
+# Today's Agenda
+
+![bg right:40%](images/agenda-roadmap.png)
 
 1. **First Principles** — tokens, attention, the context window
-2. **Context Is Everything** — what fills the window and why it matters
+2. **Context Is King** — what fills the window and why it matters
 3. **Agents** — systems that manage context automatically
 4. **Putting It Together** — where this lands and what to learn next
 
 ---
 
-# It's Simpler Than You Think
+# It's Not as Complicated as It Looks
 
 <div class="columns">
 <div>
@@ -249,7 +251,9 @@ The point: don't let the notation intimidate you. The core concepts are accessib
 
 ---
 
-# The Jargon Decoder
+# Cracking the Cryptic
+
+<div style="display: flex; justify-content: center;">
 
 | They say | They mean |
 |----------|-----------|
@@ -264,7 +268,9 @@ The point: don't let the notation intimidate you. The core concepts are accessib
 | **Parameters** | The numbers it learned |
 | **Fine-tuning** | More training on specific data |
 
-> **nanoGPT:** a full working LLM in **~600 lines** of Python.
+</div>
+
+> **[nanoGPT](https://github.com/karpathy/nanoGPT):** a full working LLM in **~600 lines** of Python.
 
 ---
 
@@ -545,7 +551,6 @@ This is why curation matters more than capacity. It's not about how much you CAN
 | MCP server schemas | 👤 User | Config'd |
 | Loaded SKILL.md | 🤖 Agent | On demand |
 | Custom agents (.agent.md) | 👤 User | Invoked |
-| Hooks | 👤 User | Event-driven |
 | Conversation history | 🖥️ UI | Compacted |
 | Retrieved context | 🤖 Agent | Tool calls |
 | User's current message | 👤 User | Always |
@@ -773,7 +778,7 @@ Two strategies, same goal: get the right text into the window.
 | **How** | Pre-indexed vectors → similarity search | `grep`, `glob`, `view` at runtime |
 | **Speed** | Fast lookup | Slower, multi-step |
 | **Freshness** | Can go stale | Always current |
-| **Who decides** | Retrieval pipeline | The model itself |
+| **Who decides** | Your search setup | The model itself |
 
 Both are just **context injection** — the difference is *when* and *who* picks what goes in.
 
@@ -1022,10 +1027,8 @@ The naming is just surface-level differences. The mechanism is universal.
 
 # Calibrating Trust
 
-> *"We still need to think in probabilities and choose the right level of human oversight for the job."*
+> *"Think in probabilities and choose the right level of human oversight for the job."*
 > — **Martin Fowler**
-
-Context engineering increases **probability** of good output — but models are probabilistic, not deterministic.
 
 **In practice (Feb 2026), they're remarkably reliable:**
 - Follow instructions consistently when context is well-engineered
@@ -1033,7 +1036,7 @@ Context engineering increases **probability** of good output — but models are 
 - The better the context, the more you can trust the output
 
 **Match oversight to stakes:**
-- 🟢 Most tasks — let it run, review Ctrl+Y the diff
+- 🟢 Most tasks — let it run, review the diff
 - 🟡 Sensitive data — log and spot-check
 - 🔴 Irreversible actions — require human approval
 
@@ -1200,23 +1203,9 @@ This is production engineering for AI agents. Context is infrastructure.
 
 **Part 3** — Agents are loops that <span style="color: var(--accent-orange);">manage context</span>: compaction, notes, sub-agents.
 
-**Part 4** — SWE-bench: 1.7% → 79% in two years. <span style="color: var(--accent-orange);">Context engineering</span> is why.
-
-🔑 This applies whether you're **building or using** AI.
+**Part 4** — SWE-bench: 1.7% → 79% in two years. <span style="color: var(--accent-orange);">Context engineering</span> is the core skill now.
 
 </div>
-
----
-
-<!-- _class: lead -->
-<!-- _paginate: false -->
-
-# Thank You
-
-**Context is everything.**
-
-All slides, outline, and references:
-`github.com/crmitchelmore/context-presentation`
 
 ---
 
@@ -1233,6 +1222,18 @@ Anything goes: technical, non-technical, a demo, tips & tricks, a workflow, a wa
 - If oversubscribed, we'll add a second session
 
 **Drop me a message on Teams** and I'll schedule you in.
+
+---
+
+<!-- _class: lead -->
+<!-- _paginate: false -->
+
+# Thank You
+
+**Context is everything.**
+
+All slides, outline, and references:
+`github.com/crmitchelmore/context-presentation`
 
 ---
 
